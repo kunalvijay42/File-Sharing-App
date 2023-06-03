@@ -37,10 +37,10 @@ function App() {
     <div className='container'>
       <img src={img} className='img' />
       <div className='wrapper'>
-        <h1>Simple file sharing!</h1>
+        <h1>FileFlow</h1>
         {/* <div className="drop_box"> */}
         <img src={img1} alt="File Icon" className='img1' />
-        <p>Upload and share the download link.</p>
+        <p>Upload the file and share the download link.</p>
 
         <button onClick={() => onUploadClick()}><BsUpload size={20} className='upload' />Upload</button>
         <input

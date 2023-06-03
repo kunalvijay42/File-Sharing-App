@@ -8,6 +8,11 @@ import { BsUpload } from 'react-icons/bs';
 function App() {
   const [file, setFile] = useState('');
   const [result, setResult] = useState('');
+  const [showText, setShowText] = useState(false);
+
+  const toggleTextVisibility = () => {
+    setShowText(!showText);
+  };
 
   const fileInputRef = useRef();  //Used to copy behaviour of input field file to button
 
@@ -40,7 +45,8 @@ function App() {
         <h1>FileFlow</h1>
         {/* <div className="drop_box"> */}
         <img src={img1} alt="File Icon" className='img1' />
-        <p>Upload the file and share the download link.</p>
+        {/* <p>Upload the file and share the download link.</p> */}
+        <p className='ease'>Easily Share Download Links by Uploading Your Files</p>
 
         <button onClick={() => onUploadClick()}><BsUpload size={20} className='upload' />Upload</button>
         <input
@@ -49,7 +55,9 @@ function App() {
           style={{ display: "none" }}
           onChange={(e) => setFile(e.target.files[0])}
         />
-
+        {/* {showText && <h4>This text will be shown when the button is clicked.</h4>} */}
+        {/* <h4>The shareable link of the file is: </h4> */}
+        {/* <h4>The shareable link is: <a href={result} target='_blank'>{result}</a></h4> */}
         <a href={result} target='_blank'>{result}</a>
         {/* </div> */}
       </div>

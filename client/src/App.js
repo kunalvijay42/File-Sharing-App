@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react'; //Useref is like Document.getElementById()
 import './App.css';
 import { uploadFile } from './service/api';
 import img from './Background2.jpg';
@@ -21,14 +21,14 @@ function App() {
   const url = '..client/public/Background.png';
 
 
-  useEffect(() => {  //To do something after render
+  useEffect(() => {  //To do something after render, used to call the API when the file is changed
     const getImage = async () => {
       if (file) {
         const data = new FormData();  //common way to create a bundle of data to send to the server using XMLHttpRequest or fetch
         data.append("name", file.name);
         data.append("file", file);
-        const response = await uploadFile(data);
-        setResult(response.path);
+        const response = await uploadFile(data); //API Call, it basically receives the link of the file as response
+        setResult(response.path); //Using usestate 
       }
     }
     getImage();
@@ -53,7 +53,7 @@ function App() {
           type="file"
           ref={fileInputRef}
           style={{ display: "none" }}
-          onChange={(e) => setFile(e.target.files[0])}
+          onChange={(e) => setFile(e.target.files[0])} //We get every information about the file and we access 0 element as the file is array
         />
         {/* {showText && <h4>This text will be shown when the button is clicked.</h4>} */}
         {/* <h4>The shareable link of the file is: </h4> */}

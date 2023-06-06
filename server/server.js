@@ -1,5 +1,5 @@
 import express from 'express';
-import cors from 'cors';
+import cors from 'cors'; //When the backend and frontend run on different ports, It allows to send data between two ports easily
 import router from './routes/routes.js';
 import DBConnection from './database/db.js';
 import dotenv from 'dotenv';

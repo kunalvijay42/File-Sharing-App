@@ -1,5 +1,4 @@
 import File from '../models/file.js';
-import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -11,7 +10,7 @@ export const uploadImage = async (request, response) => {
     }
 
     try {
-        const file = await File.create(fileObj);
+        const file = await File.create(fileObj); //To valid the data coming from frontend acording to the DB Schema
         response.status(200).json({ path: `https://fileflow.onrender.com/file/${file._id}` });
     } catch (error) {
         console.error(error.message);

@@ -7,6 +7,7 @@
   background: #edf5fe;
   height: 100vh;
   overflow: hidden;
+  /* To hide the scrollbar */
   display: flex;
 }
 

@@ -6,6 +6,6 @@ const router = express.Router();
 
 
 router.post('/upload', upload.single('file'), uploadImage);
-router.get('/file/:fileId', getImage); //So a sto download the image
+router.get('/file/:fileId', getImage); //So as to download the image
 
 export default router;
